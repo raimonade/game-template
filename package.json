@@ -13,7 +13,8 @@
   "dependencies": {
     "pixi-spine": "^2.1.9",
     "pixi.js": "^5.3.0",
-    "stats.js": "^0.17.0"
+    "stats.js": "^0.17.0",
+    "strongly-typed-events": "^1.6.13"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",

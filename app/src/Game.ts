@@ -1,5 +1,7 @@
 import * as PIXI from "pixi.js";
 import { isConstructorDeclaration } from 'typescript';
+import Events from './Events';
+import PIXITimings from './utils/PIXITimings';
 
 export default class Game {
     private static _root: HTMLElement;
@@ -11,6 +13,21 @@ export default class Game {
     public static get Game(): PIXI.Application {
         return  this._game
     }
+
+    private static _events: Events;
+	public static get Events() {
+		return this._events;
+    }
+
+    private static _Timings: PIXITimings;
+    public static get Timings(){
+        return Game._Timings;
+    }
+    
+    	// Time in seconds
+	public static get time() {
+		return Game.Timings.currentTime / 1000;
+	}
 
     private _activeScenes: PIXI.Container[];
 
@@ -31,5 +48,11 @@ export default class Game {
         Game._game.view.style.position = 'absolute';
         Game.Root.appendChild(Game._game.view);
 
+        this.createGame();
+
+    }
+
+    private createGame() {
+        Game._events = new Events();
     }
 }

@@ -14,7 +14,7 @@ export default class App {
 
     private initGame(){
         new Game(this._element);
-        console.log(Game);
+        console.log('Game started');
     }
 
 
