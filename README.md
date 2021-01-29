@@ -1,1 +1,1 @@
-# snail-game-template
+# pixi-template for personal use
